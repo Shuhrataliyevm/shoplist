@@ -16,7 +16,7 @@ const useAddPeople = (searchText) => {
             setError(null);
 
             try {
-                const response = await API.get(`/groupid/members?q=${searchText}`);
+                const response = await API.get(`/groupId/members?q=${searchText}`);
                 setSearchResults(response.data || []);
             } catch (err) {
                 setError(err);

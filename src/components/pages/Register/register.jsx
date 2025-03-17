@@ -20,7 +20,7 @@ function Register() {
     }
     return (
         <Card className='register' style={{ margin: "0 auto", marginTop: '100px' }}>
-            <p className='register-texts'>Register</p>
+            <p className='register-texts'> Register </p>
             <Form className='form'>
                 <Form.Item label="Username">
                     <Input value={username} onChange={(e) => setUsername(e.target.value)} ref={usernameRef} placeholder="Enter username" />
