@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Card, Form, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import "./register.scss"
 function Register() {
 
     const [username, setUsername] = useState('');
@@ -18,8 +19,9 @@ function Register() {
         registerMutation.mutate({ username, password, name });
     }
     return (
-        <Card title="Register" style={{ width: 300, margin: "0 auto", marginTop: '100px' }}>
-            <Form>
+        <Card className='register' style={{ margin: "0 auto", marginTop: '100px' }}>
+            <p className='register-texts'>Register</p>
+            <Form className='form'>
                 <Form.Item label="Username">
                     <Input value={username} onChange={(e) => setUsername(e.target.value)} ref={usernameRef} placeholder="Enter username" />
                 </Form.Item>
@@ -29,13 +31,21 @@ function Register() {
                 <Form.Item label="Password">
                     <Input.Password value={password} onChange={(e) => setPassword(e.target.value)} ref={passwordRef} placeholder="Enter password" />
                 </Form.Item>
-                <p style={{ marginTop: 10 }}>
+                <p className='register-text' style={{ marginTop: 10 }}>
                     Do you have an account? <Link to="/login">Login</Link>
                 </p>
-                <Button type="primary" onClick={handleSubmit}>
+                <Button className='register-btn' type="primary" onClick={handleSubmit}>
                     Register
                 </Button>
             </Form>
+            <Card className="newCards">
+                <div className="newImages">
+                    <img src="/public/icons/blog-solid (1).svg" alt="" />
+                    <br />
+                    <h5>Welcome back to</h5>
+                    <h1>Shopping List</h1>
+                </div>
+            </Card>
         </Card>
     );
 };

@@ -17,7 +17,6 @@ const saveToLocalStorage = (key, value) => {
 };
 
 export const useStore = create((set) => ({
- 
   user: getFromLocalStorage("user", null),
   setUser: (user) =>
     set(() => {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import { Form, Input, Button, Card } from "antd";
 import useAuth from '../../../hooks/useAuth';
+import "./login.scss"
 function Login() {
 
     const [username, setUsername] = useState('muhammadazim');
@@ -15,7 +16,8 @@ function Login() {
     };
 
     return (
-        <Card title="Login" style={{ width: 300, margin: "0 auto", marginTop: '100px' }}>
+        <Card className='logins' >
+            <p className='logins-text'>Sign In</p>
             <Form>
                 <Form.Item label="Username">
                     <Input placeholder="Enter username" value={username}  onChange={(e) => setUsername(e.target.value)}/>
@@ -23,13 +25,21 @@ function Login() {
                 <Form.Item label="Password">
                     <Input.Password placeholder="Enter password"  value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Item>
-                <p style={{ marginTop: 10 }}>
+                <p className='logins-textes'>
                     Don't you have an account? <Link to="/register">Register</Link>
                 </p>
-                <Button type="primary" onClick={handleSubmit} >
-                    Login
+                <Button className='logins-btn' type="primary" onClick={handleSubmit} >
+                    Sign In
                 </Button>
             </Form>
+            <Card className="newCard">
+                <div className="newImage">
+                    <img src="/public/icons/blog-solid (1).svg" alt="" />
+                    <br />
+                    <h5>Welcome back to</h5>
+                    <h1>Shopping List</h1>
+                </div>
+            </Card>
         </Card>
     );
 };

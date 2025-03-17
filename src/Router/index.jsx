@@ -5,17 +5,21 @@ import Group from '../components/pages/Group/group';
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import Profile from '../components/pages/Profile/profile';
-function index() {
+import { Header } from 'antd/es/layout/layout';
+import CustomText from '../components/pages/CustomText/CustomText';
+function Index() {
     return (
         <Routes>
             <Route path="/" element={<PrivateRoute />}>
-            <Route path="/" element={<Profile />} />
+                <Route path="/" element={<Profile />} />
+                <Route path="/group" element={<Group />} /> 
+                <Route path="/header" element={<Header />} />
+                <Route path="/customtext" element={<CustomText />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/group" element={<Group />} />
         </Routes>
     )
 }
 
-export default index;
+export default Index;
